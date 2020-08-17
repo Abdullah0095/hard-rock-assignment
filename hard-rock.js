@@ -6,33 +6,30 @@ const button = document.getElementById("button");
 // To get the song name, album & artist
 
 button.addEventListener("click", function(){
+
+    
     
     fetch('https://api.lyrics.ovh/suggest/'+input.value+'')
     .then(res => res.json())
     .then(data => {
     
         console.log(data);
+        
         // first-search-result
         document.getElementById("album1").innerText = data.data[0].album.title;
         document.getElementById("artist1").innerText = data.data[0].artist.name;
         document.getElementById("song-name1").innerText = input.value;
 
-        document.getElementById("lyrics1").addEventListener("click", function(){
-            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist1").innerText+'/'+document.getElementById("song-name1").innerText+'')
-            .then(res => res.json())
-            .then(data => {
-    
-                console.log(data);
-                
-                document.getElementById("lyrics12").innerText = lyrics.lyrics;
-        })
+        
 
-    })
+   
 
         // second-search-result
         document.getElementById("album2").innerText = data.data[1].album.title;
         document.getElementById("artist2").innerText = data.data[1].artist.name;
         document.getElementById("song-name2").innerText = input.value;
+
+        
 
         // third-search-result
         document.getElementById("album3").innerText = data.data[2].album.title;
@@ -75,12 +72,115 @@ button.addEventListener("click", function(){
         document.getElementById("song-name10").innerText = input.value;
 });
 
-
-
-
-
 });
 
+document.getElementById("lyrics1").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist1").innerText+'/'+document.getElementById("song-name1").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-first").innerText = data.lyrics;
+        })
+});
 
+document.getElementById("lyrics2").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist2").innerText+'/'+document.getElementById("song-name2").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-second").innerText = data.lyrics;
+            });
+        });
 
+document.getElementById("lyrics3").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist3").innerText+'/'+document.getElementById("song-name3").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-third").innerText = data.lyrics;
+            });
+        }); 
+        //  
+        document.getElementById("lyrics4").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist4").innerText+'/'+document.getElementById("song-name4").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-forth").innerText = data.lyrics;
+            });
+        });  
 
+        document.getElementById("lyrics5").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist5").innerText+'/'+document.getElementById("song-name5").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-fifth").innerText = data.lyrics;
+            });
+        });  
+
+        document.getElementById("lyrics6").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist6").innerText+'/'+document.getElementById("song-name6").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-sixth").innerText = data.lyrics;
+            });
+        });  
+        document.getElementById("lyrics7").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist7").innerText+'/'+document.getElementById("song-name7").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-seventh").innerText = data.lyrics;
+            });
+        });  
+        
+        document.getElementById("lyrics8").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist8").innerText+'/'+document.getElementById("song-name8").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-eighth").innerText = data.lyrics;
+            });
+        });  
+        
+        document.getElementById("lyrics9").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist9").innerText+'/'+document.getElementById("song-name9").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-ninth").innerText = data.lyrics;
+            });
+        });  
+        
+        document.getElementById("lyrics10").addEventListener("click", function(){
+            fetch('https://api.lyrics.ovh/v1/'+document.getElementById("artist10").innerText+'/'+document.getElementById("song-name10").innerText+'')
+            .then(res => res.json())
+            .then(data => {
+        
+                console.log(data);
+                
+                document.getElementById("lyrics-tenth").innerText = data.lyrics;
+            });
+        });  
+
+        
