@@ -7,7 +7,8 @@ const button = document.getElementById("button");
 
 button.addEventListener("click", function(){
 
-    
+    const searchArea = document.getElementById("search-area");
+    searchArea.style.display = "block";
     
     fetch('https://api.lyrics.ovh/suggest/'+input.value+'')
     .then(res => res.json())
